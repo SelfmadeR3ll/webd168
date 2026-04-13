@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Me - Larell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- Main Heading -->
+<h1>Welcome to My Page</h1>
+
+<!-- Introduction Paragraph -->
+<p>
+Hey, my name is Larell. I’m a business student and entrepreneur focused on building my clothing brand and creating multiple streams of income. I’m always working on improving myself and leveling up in life.
+</p>
+
+<!-- Background Paragraph -->
+<p>
+I moved to California from Virginia and I’ve been balancing school, work, and building my brand. I enjoy learning about marketing, business, and how to grow something from nothing.
+</p>
+
+<!-- Goals Paragraph -->
+<p>
+My goal is to build a successful business empire, own multiple cars, and inspire others to chase their goals. I believe in discipline, consistency, and putting in the work every day.
+</p>
+
+<!-- Image Section -->
+<img src="https://via.placeholder.com/300" alt="My Photo">
+
+<!-- Hobbies List -->
+<h2>My Interests</h2>
+<ul>
+    <li>Building my clothing brand</li>
+    <li>Working out and football</li>
+    <li>Learning business and marketing</li>
+</ul>
+
+</body>
+</html>body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 200px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: square;
+}
