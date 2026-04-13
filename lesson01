@@ -1,64 +1,443 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>About Me - Larell</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — [Your Name]</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background-color: #f5f1eb;
+      color: #2c2c2c;
+      line-height: 1.75;
+    }
+
+    a { color: #5a3e28; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Navigation ── */
+    nav {
+      background-color: #2c2c2c;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 14px 22px;
+      color: #f5f1eb;
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    nav ul li a:hover {
+      background-color: #5a3e28;
+      text-decoration: none;
+    }
+
+    /* ── Hero / Header ── */
+    header {
+      background-color: #3b2f1e;
+      color: #f5f1eb;
+      text-align: center;
+      padding: 70px 20px 60px;
+    }
+
+    header .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background-color: #7a5c3a;
+      border: 4px solid #f5f1eb;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      /* Replace with an <img> tag once you have a photo */
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    header p.tagline {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      font-style: italic;
+    }
+
+    /* ── Main Layout ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-top: 52px;
+      padding-top: 8px;
+      border-top: 2px solid #d4c4ae;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      color: #5a3e28;
+      margin-bottom: 16px;
+      font-weight: normal;
+      letter-spacing: 0.03em;
+    }
+
+    section p {
+      margin-bottom: 14px;
+    }
+
+    /* ── Lists ── */
+    ul.bio-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    ul.bio-list li {
+      background-color: #ede5d8;
+      border-left: 4px solid #7a5c3a;
+      padding: 10px 14px;
+      border-radius: 2px;
+      font-family: Arial, sans-serif;
+      font-size: 0.93rem;
+    }
+
+    /* ── Goals Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    table thead tr {
+      background-color: #3b2f1e;
+      color: #f5f1eb;
+    }
+
+    table th, table td {
+      padding: 11px 14px;
+      text-align: left;
+      border-bottom: 1px solid #d4c4ae;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #ede5d8;
+    }
+
+    /* ── Activities Cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .card {
+      background-color: #ede5d8;
+      border-radius: 4px;
+      padding: 18px 16px;
+      border-top: 4px solid #7a5c3a;
+      font-family: Arial, sans-serif;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      color: #3b2f1e;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: #555;
+      margin: 0;
+    }
+
+    /* ── Quote ── */
+    blockquote {
+      border-left: 4px solid #7a5c3a;
+      padding: 12px 20px;
+      margin: 20px 0;
+      background-color: #ede5d8;
+      font-style: italic;
+      color: #4a3828;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    /* ── Contact ── */
+    address {
+      font-style: normal;
+      font-family: Arial, sans-serif;
+      font-size: 0.93rem;
+      line-height: 2;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background-color: #2c2c2c;
+      color: #bbb;
+      text-align: center;
+      padding: 22px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
 <body>
 
-<!-- Main Heading -->
-<h1>Welcome to My Page</h1>
+  <!-- ── Navigation ── -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- Introduction Paragraph -->
-<p>
-Hey, my name is Larell. I’m a business student and entrepreneur focused on building my clothing brand and creating multiple streams of income. I’m always working on improving myself and leveling up in life.
-</p>
+  <!-- ── Hero ── -->
+  <header>
+    <div class="avatar" aria-label="Profile photo placeholder">&#128100;</div>
+    <h1>[Your Full Name]</h1>
+    <p class="tagline">[Your major / program / one-line description of yourself]</p>
+  </header>
 
-<!-- Background Paragraph -->
-<p>
-I moved to California from Virginia and I’ve been balancing school, work, and building my brand. I enjoy learning about marketing, business, and how to grow something from nothing.
-</p>
+  <main>
 
-<!-- Goals Paragraph -->
-<p>
-My goal is to build a successful business empire, own multiple cars, and inspire others to chase their goals. I believe in discipline, consistency, and putting in the work every day.
-</p>
+    <!-- ── About ── -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! My name is <strong>[Your Name]</strong>, and I am a [year — freshman / sophomore / junior / senior]
+        studying <strong>[Your Major]</strong> at <strong>[Your School]</strong>. I grew up in
+        [Your Hometown / City, State] and have always had a passion for [broad area of interest].
+      </p>
+      <p>
+        Outside of the classroom I enjoy [brief overview of how you spend your time]. I created this page
+        as part of my web development coursework to introduce myself and demonstrate hand-coded HTML skills.
+      </p>
 
-<!-- Image Section -->
-<img src="https://via.placeholder.com/300" alt="My Photo">
+      <blockquote>
+        "Insert a quote that resonates with you — something that captures how you approach life or learning."
+        <cite>— Author Name</cite>
+      </blockquote>
+    </section>
 
-<!-- Hobbies List -->
-<h2>My Interests</h2>
-<ul>
-    <li>Building my clothing brand</li>
-    <li>Working out and football</li>
-    <li>Learning business and marketing</li>
-</ul>
+    <!-- ── Hobbies ── -->
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+      <p>When I'm not studying, you'll find me:</p>
+      <ul class="bio-list">
+        <li>&#127932; Playing guitar</li>
+        <li>&#127939; Hiking and trail running</li>
+        <li>&#127869; Cooking new recipes</li>
+        <li>&#127968; Home improvement projects</li>
+        <li>&#128214; Reading science fiction</li>
+        <li>&#127760; Traveling and exploring cities</li>
+      </ul>
+      <!-- Replace the items above with your actual hobbies -->
+    </section>
+
+    <!-- ── Interests ── -->
+    <section id="interests">
+      <h2>Interests</h2>
+      <p>
+        My academic and professional interests span several areas that I actively pursue
+        beyond required coursework:
+      </p>
+      <ul class="bio-list">
+        <li>&#128187; Web &amp; software development</li>
+        <li>&#129504; Artificial intelligence &amp; machine learning</li>
+        <li>&#127758; Environmental sustainability</li>
+        <li>&#127897; Digital photography</li>
+        <li>&#128202; Data visualization</li>
+        <li>&#127793; Botany &amp; plant biology</li>
+      </ul>
+    </section>
+
+    <!-- ── Classes ── -->
+    <section id="classes">
+      <h2>Classes I Have Taken</h2>
+      <p>
+        The following courses have shaped my education and way of thinking.
+        Starred courses are personal favorites.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Subject Area</th>
+            <th>Takeaway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Introduction to Web Development &#11088;</td>
+            <td>Computer Science</td>
+            <td>HTML, CSS, and the fundamentals of building for the web</td>
+          </tr>
+          <tr>
+            <td>Calculus I &amp; II</td>
+            <td>Mathematics</td>
+            <td>Analytical thinking and problem decomposition</td>
+          </tr>
+          <tr>
+            <td>Technical Writing &#11088;</td>
+            <td>English</td>
+            <td>Clear, audience-aware communication</td>
+          </tr>
+          <tr>
+            <td>Introduction to Psychology</td>
+            <td>Social Science</td>
+            <td>Understanding human behavior and motivation</td>
+          </tr>
+          <tr>
+            <td>Data Structures &amp; Algorithms</td>
+            <td>Computer Science</td>
+            <td>Efficient problem-solving and code organization</td>
+          </tr>
+          <tr>
+            <td>[Add another course]</td>
+            <td>[Subject]</td>
+            <td>[What you learned or why it mattered]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Goals ── -->
+    <section id="goals">
+      <h2>Personal &amp; Career Goals</h2>
+      <p>I'm motivated by a clear set of short- and long-term goals:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Timeframe</th>
+            <th>Goal</th>
+            <th>Why It Matters to Me</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This semester</td>
+            <td>Master fundamental HTML &amp; CSS</td>
+            <td>Strong foundations make everything else easier</td>
+          </tr>
+          <tr>
+            <td>This year</td>
+            <td>Build a personal portfolio site</td>
+            <td>Showcase projects to potential employers</td>
+          </tr>
+          <tr>
+            <td>Short-term (1–2 years)</td>
+            <td>Land a relevant internship or co-op</td>
+            <td>Apply classroom knowledge in a professional setting</td>
+          </tr>
+          <tr>
+            <td>Long-term (5+ years)</td>
+            <td>Work as a [target role] at [type of company]</td>
+            <td>[Personal reason / impact you hope to have]</td>
+          </tr>
+          <tr>
+            <td>Personal</td>
+            <td>Travel to [your destination]</td>
+            <td>Broaden perspective and experience new cultures</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Favorite Activities ── -->
+    <section id="activities">
+      <h2>Favorite Activities</h2>
+      <p>A few things I never get tired of:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>&#127926; Listening to Music</h3>
+          <p>I keep a rotating playlist of [genre]. My current favorite artist is [name].</p>
+        </div>
+        <div class="card">
+          <h3>&#127979; Learning New Skills</h3>
+          <p>Online courses, tutorials, and books — I'm always picking up something new.</p>
+        </div>
+        <div class="card">
+          <h3>&#127952; Playing Sports</h3>
+          <p>I play [sport] recreationally and try to stay active every week.</p>
+        </div>
+        <div class="card">
+          <h3>&#127860; Trying New Foods</h3>
+          <p>Exploring different cuisines is one of my favorite ways to experience culture.</p>
+        </div>
+        <div class="card">
+          <h3>&#129309; Volunteering</h3>
+          <p>I give back through [organization / cause] whenever my schedule allows.</p>
+        </div>
+        <div class="card">
+          <h3>&#128444; Creative Projects</h3>
+          <p>Whether it's photography, writing, or design — I love making things.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <p>Feel free to reach out — I'm always open to connecting!</p>
+      <address>
+        <strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a><br>
+        <strong>LinkedIn:</strong> <a href="#">linkedin.com/in/yourprofile</a><br>
+        <strong>GitHub:</strong> <a href="#">github.com/yourusername</a><br>
+        <strong>Location:</strong> [Your City, State]
+      </address>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; 2026 [Your Name] &mdash; Hand-coded with HTML &amp; CSS. No frameworks used.</p>
+  </footer>
 
 </body>
-</html>body {
-    background-color: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-h1 {
-    color: red;
-}
-
-p {
-    width: 60%;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-img {
-    width: 200px;
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: square;
-}
+</html>
